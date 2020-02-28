@@ -1,5 +1,6 @@
 import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
+import {Link} from "react-router-dom";
 
 const navbar = () => (
     <Navbar className="bg-dark navbar-dark" expand="lg">
@@ -7,8 +8,7 @@ const navbar = () => (
         <Navbar.Toggle aria-controls="nav" />
         <Navbar.Collapse id="nav" className="justify-content-end text-light">
             <Nav className="">
-                <Nav.Link href="/" className="text-light">New Product</Nav.Link>
-                {/*<Nav.Link href="#link">Link</Nav.Link>*/}
+                <Link to="/products/create" className="text-light">New Product</Link>
             </Nav>
         </Navbar.Collapse>
     </Navbar>

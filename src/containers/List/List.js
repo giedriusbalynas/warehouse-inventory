@@ -3,28 +3,29 @@ import {Table} from 'react-bootstrap';
 import ListItem from './ListItem/ListItem';
 
 
-const list = (props) => {
-
+const list = () => {
     let items = JSON.parse(localStorage.getItem('items')) || [];
-    console.log(items[1].name);
+    let mappedItems = items.map((item, index) => {
+        return <ListItem data={item} key={index}/>
+    });
 
     return (
         <Table responsive>
             <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Type</th>
                 <th>Weight</th>
                 <th>Color</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Active</th>
                 <th></th>
             </tr>
             </thead>
             <tbody>
-                <ListItem />
-             </tbody>
+                {mappedItems}
+            </tbody>
         </Table>
     );
 };
