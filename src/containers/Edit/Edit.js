@@ -21,7 +21,8 @@ const editProduct = () => {
         weight: data.weight,
         color: data.color,
         quantity: data.quantity,
-        price: data.price
+        price: data.price,
+        isActive: data.isActive
     });
 
     const inputChangeHandler = e => {

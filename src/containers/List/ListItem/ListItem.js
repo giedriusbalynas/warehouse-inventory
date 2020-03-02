@@ -11,9 +11,16 @@ const listItem = props => {
     const handleCheck = () => {
         props.checkHandler(props.data.id);
     };
-    console.log(props.data.isActive);
+
+    let style = "";
+    let quantity = parseInt(props.data.quantity);
+
+    if (quantity === 0) {
+        style = "bg-warning";
+    }
+
     return (
-        <tr>
+        <tr className={style}>
             <td>{props.data.name}</td>
             <td>{props.data.type}</td>
             <td>{props.data.weight}</td>
@@ -22,7 +29,7 @@ const listItem = props => {
             <td>{props.data.price}</td>
             <td>
                 <Form.Group className="d-flex justify-content-center">
-                    <Form.Check onChange={handleCheck} checked={props.data.isActive}/>
+                    <Form.Check onChange={handleCheck} checked={props.data.isActive} />
                 </Form.Group>
             </td>
             <td className="d-flex">

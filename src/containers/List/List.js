@@ -21,7 +21,7 @@ const list = () => {
 
     const checkboxHandler = (id) => {
         let newArr = [];
-        console.log(id);
+
         for (let i = 0; i < listState.length; i++) {
             if (id === listState[i].id) {
                 listState[i].isActive = !listState[i].isActive;
