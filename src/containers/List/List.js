@@ -3,7 +3,7 @@ import {Table} from 'react-bootstrap';
 import ListItem from './ListItem/ListItem';
 
 
-const list = (props) => {
+const list = () => {
     let items = JSON.parse(localStorage.getItem('items')) || [];
     const [listState, setState] = useState(items);
 
@@ -12,15 +12,32 @@ const list = (props) => {
         for (let i = 0; i < items.length; i++) {
             if (id === listState[i].id) {
                 listState.splice(i, 1);
-                newArr = [...listState];
-                setState(newArr);
             }
         }
+        newArr = [...listState];
+        setState(newArr);
         localStorage.setItem('items', JSON.stringify(listState));
     };
 
+    const checkboxHandler = (id) => {
+        let newArr = [];
+        console.log(id);
+        for (let i = 0; i < listState.length; i++) {
+            if (id === listState[i].id) {
+                listState[i].isActive = !listState[i].isActive;
+            }
+        }
+        newArr = [...listState];
+        setState(newArr);
+        localStorage.setItem('items', JSON.stringify(newArr));
+    };
+
     let mappedItems = listState.map((item, index) => {
-        return <ListItem data={item} key={index} deleteHandler={deleteProductHandler}/>
+        return <ListItem
+            data={item}
+            key={index}
+            deleteHandler={deleteProductHandler}
+            checkHandler={checkboxHandler} />
     });
 
 

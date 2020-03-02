@@ -8,6 +8,10 @@ const listItem = props => {
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
 
+    const handleCheck = () => {
+        props.checkHandler(props.data.id);
+    };
+    console.log(props.data.isActive);
     return (
         <tr>
             <td>{props.data.name}</td>
@@ -18,7 +22,7 @@ const listItem = props => {
             <td>{props.data.price}</td>
             <td>
                 <Form.Group className="d-flex justify-content-center">
-                    <Form.Check/>
+                    <Form.Check onChange={handleCheck} checked={props.data.isActive}/>
                 </Form.Group>
             </td>
             <td className="d-flex">

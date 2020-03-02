@@ -11,7 +11,8 @@ const newProduct = () => {
         weight: 0,
         color: "",
         quantity: "",
-        price: 0
+        price: 0,
+        isActive: true
     });
 
     const inputChangeHandler = e => {
