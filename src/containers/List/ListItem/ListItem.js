@@ -2,21 +2,30 @@ import React from "react";
 import {Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import Delete from '../../Delete/Delete';
+import {InputGroup, FormControl} from "react-bootstrap";
 
 
 const listItem = props => {
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
 
-    const handleCheck = () => {
+    const checkboxHandler = () => {
         props.checkHandler(props.data.id);
     };
 
-    let style = "";
-    let quantity = parseInt(props.data.quantity);
+
+
+    const quantityChangeHandler = (e) => {
+        const value = e.target.value;
+        console.log(value);
+        props.quantityHandler(props.data.id, value);
+    };
+
+    let style = "text-right";
+    let quantity = parseInt(props.data.quantity, 10);
 
     if (quantity === 0) {
-        style = "bg-warning";
+        style += " bg-warning";
     }
 
     return (
@@ -25,11 +34,15 @@ const listItem = props => {
             <td>{props.data.type}</td>
             <td>{props.data.weight}</td>
             <td>{props.data.color}</td>
-            <td>{props.data.quantity}</td>
+            <td>
+                <InputGroup size="sm" className="mb-3">
+                    <FormControl onChange={quantityChangeHandler} value={props.data.quantity} />
+                </InputGroup>
+            </td>
             <td>{props.data.price}</td>
             <td>
                 <Form.Group className="d-flex justify-content-center">
-                    <Form.Check onChange={handleCheck} checked={props.data.isActive} />
+                    <Form.Check onChange={checkboxHandler} checked={props.data.isActive} />
                 </Form.Group>
             </td>
             <td className="d-flex">

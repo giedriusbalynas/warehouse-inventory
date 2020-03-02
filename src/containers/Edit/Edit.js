@@ -42,8 +42,6 @@ const editProduct = () => {
         }
         localStorage.setItem('items', JSON.stringify(items));
         browserHistory.push('/');
-        // return <Redirect to="/"/>;
-
     };
 
 
@@ -57,7 +55,7 @@ const editProduct = () => {
                                   name="name"
                                   type="text"
                                   defaultValue={data.name}
-                                  placeholder="Product name"/>
+                                  placeholder="Product name" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Type</Form.Label>
@@ -65,7 +63,7 @@ const editProduct = () => {
                                   name="type"
                                   type="text"
                                   defaultValue={data.type}
-                                  placeholder="Product type"/>
+                                  placeholder="Product type" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Weight</Form.Label>
@@ -74,7 +72,7 @@ const editProduct = () => {
                                   type="number"
                                   step="any"
                                   defaultValue={data.weight}
-                                  placeholder="Product weight"/>
+                                  placeholder="Product weight" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Color</Form.Label>
@@ -82,7 +80,7 @@ const editProduct = () => {
                                   name="color"
                                   type="text"
                                   defaultValue={data.color}
-                                  placeholder="Product color"/>
+                                  placeholder="Product color" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Quantity</Form.Label>
@@ -90,7 +88,7 @@ const editProduct = () => {
                                   name="quantity"
                                   type="text"
                                   defaultValue={data.quantity}
-                                  placeholder="Product quantity"/>
+                                  placeholder="Product quantity" />
                 </Form.Group>
                 <Form.Group>
                     <Form.Label>Price</Form.Label>
@@ -99,7 +97,7 @@ const editProduct = () => {
                                   type="number"
                                   step="any"
                                   defaultValue={data.price}
-                                  placeholder="Product price"/>
+                                  placeholder="Product price" />
                 </Form.Group>
                 <Button className="my-3"
                         variant="secondary"

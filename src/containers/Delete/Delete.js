@@ -2,7 +2,6 @@ import React from "react";
 import {Button} from 'react-bootstrap';
 
 const deleteProduct = (props) => {
-
     const handleClick = () => {
         props.deleteHandler(props.id);
     };

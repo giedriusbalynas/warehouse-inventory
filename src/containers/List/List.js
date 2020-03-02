@@ -31,13 +31,27 @@ const list = () => {
         setState(newArr);
         localStorage.setItem('items', JSON.stringify(newArr));
     };
+    const quantityChangeHandler = (id, value) => {
+        let newArr = [];
+
+        for (let i = 0; i < listState.length; i++) {
+            if (id === listState[i].id) {
+                listState[i].quantity = value;
+            }
+        }
+        newArr = [...listState];
+        setState(newArr);
+        localStorage.setItem('items', JSON.stringify(newArr));
+    };
+    console.log(listState[0]);
 
     let mappedItems = listState.map((item, index) => {
         return <ListItem
             data={item}
             key={index}
             deleteHandler={deleteProductHandler}
-            checkHandler={checkboxHandler} />
+            checkHandler={checkboxHandler}
+            quantityHandler={quantityChangeHandler}/>
     });
 
 
