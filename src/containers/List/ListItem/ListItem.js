@@ -1,14 +1,13 @@
 import React from "react";
 import {Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
+import Delete from '../../Delete/Delete';
 
 
 const listItem = props => {
-    // const passData = {
-    //   pathname: "/products/:id/edit",
-    //   data: props.data
-    // };
-const editLink = "/products/" + props.data.id + "/edit";
+    const editLink = "/products/" + props.data.id + "/edit";
+    const viewLink = "/products/" + props.data.id;
+
     return (
         <tr>
             <td>{props.data.name}</td>
@@ -18,14 +17,14 @@ const editLink = "/products/" + props.data.id + "/edit";
             <td>{props.data.quantity}</td>
             <td>{props.data.price}</td>
             <td>
-                <Form.Group>
+                <Form.Group className="d-flex justify-content-center">
                     <Form.Check/>
                 </Form.Group>
             </td>
             <td className="d-flex">
-                <Link to="/products/view" className="btn btn-secondary active" role="button" aria-pressed="true">VIEW</Link>
+                <Link to={viewLink} className="btn btn-secondary active" role="button" aria-pressed="true">VIEW</Link>
                 <Link to={editLink} className="btn btn-primary active" role="button" aria-pressed="true">EDIT</Link>
-                <Link to="#" className="btn btn-danger active" role="button" aria-pressed="true">DELETE</Link>
+                <Delete id={props.data.id} deleteHandler={props.deleteHandler}/>
             </td>
         </tr>
     )

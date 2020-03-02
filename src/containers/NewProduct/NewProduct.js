@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
-import { v4 as uuidv4 } from 'uuid'; //this is for creating unique identifier
+import {useHistory} from "react-router-dom";
+import {v4 as uuidv4} from 'uuid'; //this is for creating unique identifier
 
 const newProduct = () => {
     const [itemsState, setItems] = useState({
@@ -16,17 +17,16 @@ const newProduct = () => {
     const inputChangeHandler = e => {
         const {name, value} = e.target;
         setItems({...itemsState, [name]: value});
-        console.log(name);
     };
+
+    const browserHistory = useHistory();
 
     const createProductHandler = (event) => {
         event.preventDefault();
         let oldItems = JSON.parse(localStorage.getItem('items')) || [];
         oldItems.push(itemsState);
-
         localStorage.setItem('items', JSON.stringify(oldItems));
-
-        console.log(itemsState);
+        browserHistory.push('/');
     };
 
     return (

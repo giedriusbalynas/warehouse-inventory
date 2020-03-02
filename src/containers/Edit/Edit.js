@@ -1,18 +1,16 @@
 import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
-import {Link, useParams} from "react-router-dom";
+import {Link, useParams, useHistory} from "react-router-dom";
 
 const editProduct = () => {
     let items = JSON.parse(localStorage.getItem('items')) || [];
     let id = useParams();
-
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;
         }
         return mappedItems;
     });
-    console.log("mapped: ", mappedItems[0]);
 
     let data = mappedItems[0];
 
@@ -29,26 +27,29 @@ const editProduct = () => {
     const inputChangeHandler = e => {
         const {name, value} = e.target;
         setItems({...itemsState, [name]: value});
-        console.log(name);
     };
-    console.log(itemsState);
-    //
-    // const createProductHandler = (event) => {
-    //     event.preventDefault();
-    //     let oldItems = JSON.parse(localStorage.getItem('items')) || [];
-    //     oldItems.push(itemsState);
-    //
-    //     localStorage.setItem('items', JSON.stringify(oldItems));
-    //
-    //     console.log(itemsState);
-    // };
-    // // console.log(localStorage);
+
+    const browserHistory = useHistory();
+
+    const editProductHandler = (event) => {
+        event.preventDefault();
+
+        for (let i = 0; i < items.length; i++) {
+            if (itemsState.id === items[i].id) {
+                items[i] = itemsState;
+            }
+        }
+        localStorage.setItem('items', JSON.stringify(items));
+        browserHistory.push('/');
+        // return <Redirect to="/"/>;
+
+    };
 
 
     return (
         <div>
             <h2 className="mt-5">Edit Product</h2>
-            <Form className="my-5">
+            <Form className="my-5" onSubmit={editProductHandler}>
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
                     <Form.Control onChange={inputChangeHandler}
