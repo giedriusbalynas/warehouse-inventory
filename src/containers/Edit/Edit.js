@@ -13,7 +13,6 @@ const editProduct = () => {
     });
 
     let data = mappedItems[0];
-    console.log(data.quantity);
     const [itemState, setItems] = useState(data);
 
     const inputChangeHandler = e => {
@@ -22,25 +21,33 @@ const editProduct = () => {
     };
 
     const browserHistory = useHistory();
+    let currentTime = Date.now() / 1000 | 0;
 
     const editProductHandler = (event) => {
         event.preventDefault();
         for (let i = 0; i < items.length; i++) {
-            let historyLastIndex = itemState.quantityHistory.length - 1;
-            let historyLastValue = itemState.quantityHistory[historyLastIndex];
+            let quantityLastIndex = itemState.quantityHistory.length - 1;
+            let quantityLastValue = itemState.quantityHistory[quantityLastIndex];
 
+            let priceLastIndex = itemState.priceHistory.length -1;
+            let priceLastValue = itemState.priceHistory[priceLastIndex][0];
 
             if (itemState.id === items[i].id) {
-                if (historyLastValue !== itemState.quantity) {
+                if (quantityLastValue !== itemState.quantity) {
                     itemState.quantityHistory.push(itemState.quantity);
                     if (itemState.quantityHistory.length > 5) {
                         itemState.quantityHistory.splice(0, itemState.quantityHistory.length - 5);
                     }
                 }
+                if (priceLastValue !== itemState.price) {
+                    itemState.priceHistory.push([itemState.price, currentTime]);
+                    if (itemState.priceHistory.length > 5) {
+                        itemState.priceHistory.splice(0, itemState.priceHistory.length - 5);
+                    }
+                }
                 items[i] = itemState;
             }
         }
-        console.log(itemState);
         localStorage.setItem('items', JSON.stringify(items));
         browserHistory.push('/');
     };

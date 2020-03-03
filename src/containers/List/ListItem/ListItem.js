@@ -33,6 +33,11 @@ const listItem = props => {
         props.quantityHistory(props.data.id, value)
     };
 
+    const priceHistoryHandler = (event) => {
+        const value = event.target.value;
+        props.priceHistory(props.data.id, value)
+    };
+
     return (
         <tr className={style}>
             <td>{props.data.name}</td>
@@ -50,7 +55,9 @@ const listItem = props => {
             <td>
                 <InputGroup size="sm">
                     <FormControl onChange={priceChangeHandler}
-                                 value={props.data.price} />
+                                 onBlur={priceHistoryHandler}
+                                 value={props.data.price}
+                                 type="number" min="0" step="0.01"/>
                 </InputGroup>
             </td>
             <td>

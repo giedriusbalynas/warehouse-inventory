@@ -69,6 +69,28 @@ const list = () => {
         localStorage.setItem('items', JSON.stringify(newArr));
     };
 
+    const priceHistoryHandler = (id, value) => {
+        let currentTime = Date.now() / 1000 | 0;
+        for (let i = 0; i < listState.length; i++) {
+            let historyLastIndex = listState[i].priceHistory.length - 1;
+            let historyLastValue = listState[i].priceHistory[historyLastIndex];
+            console.log(historyLastValue);
+            console.log(value);
+            if (id === listState[i].id) {
+                if (historyLastValue[0] !== value) {
+                    listState[i].priceHistory.push([value, currentTime]);
+                    if (listState[i].priceHistory.length > 5) {
+                        listState[i].priceHistory.splice(0, listState[i].priceHistory.length - 5);
+                    }
+                }
+            }
+        }
+        let newArr = [...listState];
+        setState(newArr);
+        // console.log(listState);
+        localStorage.setItem('items', JSON.stringify(newArr));
+    };
+
     let mappedItems = listState.map((item, index) => {
         return <ListItem
             data={item}
@@ -77,7 +99,8 @@ const list = () => {
             checkHandler={checkboxHandler}
             quantityHandler={quantityChangeHandler}
             priceHandler={priceChangeHandler}
-            quantityHistory={quantityHistoryHandler}/>
+            quantityHistory={quantityHistoryHandler}
+            priceHistory={priceHistoryHandler} />
     });
 
 

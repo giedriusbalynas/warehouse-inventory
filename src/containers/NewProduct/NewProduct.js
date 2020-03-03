@@ -23,11 +23,13 @@ const newProduct = () => {
     };
 
     const browserHistory = useHistory();
+    let currentTime = Date.now() / 1000 | 0;
 
     const createProductHandler = (event) => {
         event.preventDefault();
         let oldItems = JSON.parse(localStorage.getItem('items')) || [];
         itemsState.quantityHistory = [itemsState.quantity];
+        itemsState.priceHistory = [[itemsState.price, currentTime]];
         oldItems.push(itemsState);
         localStorage.setItem('items', JSON.stringify(oldItems));
         browserHistory.push('/');
