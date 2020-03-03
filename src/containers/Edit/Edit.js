@@ -13,33 +13,34 @@ const editProduct = () => {
     });
 
     let data = mappedItems[0];
-
-    const [itemsState, setItems] = useState({
-        id: data.id,
-        name: data.name,
-        type: data.type,
-        weight: data.weight,
-        color: data.color,
-        quantity: data.quantity,
-        price: data.price,
-        isActive: data.isActive
-    });
+    console.log(data.quantity);
+    const [itemState, setItems] = useState(data);
 
     const inputChangeHandler = e => {
         const {name, value} = e.target;
-        setItems({...itemsState, [name]: value});
+        setItems({...itemState, [name]: value});
     };
 
     const browserHistory = useHistory();
 
     const editProductHandler = (event) => {
         event.preventDefault();
-
         for (let i = 0; i < items.length; i++) {
-            if (itemsState.id === items[i].id) {
-                items[i] = itemsState;
+            let historyLastIndex = itemState.quantityHistory.length - 1;
+            let historyLastValue = itemState.quantityHistory[historyLastIndex];
+
+
+            if (itemState.id === items[i].id) {
+                if (historyLastValue !== itemState.quantity) {
+                    itemState.quantityHistory.push(itemState.quantity);
+                    if (itemState.quantityHistory.length > 5) {
+                        itemState.quantityHistory.splice(0, itemState.quantityHistory.length - 5);
+                    }
+                }
+                items[i] = itemState;
             }
         }
+        console.log(itemState);
         localStorage.setItem('items', JSON.stringify(items));
         browserHistory.push('/');
     };

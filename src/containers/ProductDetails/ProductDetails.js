@@ -2,7 +2,7 @@ import React from "react";
 import {ListGroup} from 'react-bootstrap';
 import {Link, useParams} from "react-router-dom";
 
-const view = () => {
+const productDetails = () => {
     let id = useParams();
     let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -31,4 +31,4 @@ const view = () => {
     );
 };
 
-export default view;
+export default productDetails;

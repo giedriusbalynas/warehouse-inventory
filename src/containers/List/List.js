@@ -8,42 +8,66 @@ const list = () => {
     const [listState, setState] = useState(items);
 
     const deleteProductHandler = (id) => {
-        let newArr = [];
-        for (let i = 0; i < items.length; i++) {
+        for (let i = 0; i < listState.length; i++) {
             if (id === listState[i].id) {
                 listState.splice(i, 1);
             }
         }
-        newArr = [...listState];
+        let newArr = [...listState];
         setState(newArr);
         localStorage.setItem('items', JSON.stringify(listState));
     };
 
     const checkboxHandler = (id) => {
-        let newArr = [];
-
         for (let i = 0; i < listState.length; i++) {
             if (id === listState[i].id) {
                 listState[i].isActive = !listState[i].isActive;
             }
         }
-        newArr = [...listState];
+        let newArr = [...listState];
         setState(newArr);
         localStorage.setItem('items', JSON.stringify(newArr));
     };
     const quantityChangeHandler = (id, value) => {
-        let newArr = [];
-
         for (let i = 0; i < listState.length; i++) {
             if (id === listState[i].id) {
                 listState[i].quantity = value;
             }
         }
-        newArr = [...listState];
+        let newArr = [...listState];
         setState(newArr);
         localStorage.setItem('items', JSON.stringify(newArr));
     };
-    console.log(listState[0]);
+
+    const priceChangeHandler = (id, value) => {
+        for (let i = 0; i < listState.length; i++) {
+            if (id === listState[i].id) {
+                listState[i].price = value;
+            }
+        }
+        let newArr = [...listState];
+        setState(newArr);
+        localStorage.setItem('items', JSON.stringify(newArr));
+    };
+
+    const quantityHistoryHandler = (id, value) => {
+        for (let i = 0; i < listState.length; i++) {
+            let historyLastIndex = listState[i].quantityHistory.length - 1;
+            let historyLastValue = listState[i].quantityHistory[historyLastIndex];
+
+            if (id === listState[i].id) {
+                if (historyLastValue !== value) {
+                    listState[i].quantityHistory.push(value);
+                    if (listState[i].quantityHistory.length > 5) {
+                        listState[i].quantityHistory.splice(0, listState[i].quantityHistory.length - 5);
+                    }
+                }
+            }
+        }
+        let newArr = [...listState];
+        setState(newArr);
+        localStorage.setItem('items', JSON.stringify(newArr));
+    };
 
     let mappedItems = listState.map((item, index) => {
         return <ListItem
@@ -51,7 +75,9 @@ const list = () => {
             key={index}
             deleteHandler={deleteProductHandler}
             checkHandler={checkboxHandler}
-            quantityHandler={quantityChangeHandler}/>
+            quantityHandler={quantityChangeHandler}
+            priceHandler={priceChangeHandler}
+            quantityHistory={quantityHistoryHandler}/>
     });
 
 
@@ -61,10 +87,10 @@ const list = () => {
             <tr>
                 <th>Name</th>
                 <th>Type</th>
-                <th>Weight</th>
+                <th>Weight(kg)</th>
                 <th>Color</th>
                 <th>Quantity</th>
-                <th>Price</th>
+                <th>Price(&euro;)</th>
                 <th>Active</th>
                 <th></th>
             </tr>

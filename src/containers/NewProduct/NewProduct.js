@@ -12,7 +12,9 @@ const newProduct = () => {
         color: "",
         quantity: "",
         price: 0,
-        isActive: true
+        isActive: true,
+        quantityHistory: [],
+        priceHistory: []
     });
 
     const inputChangeHandler = e => {
@@ -25,6 +27,7 @@ const newProduct = () => {
     const createProductHandler = (event) => {
         event.preventDefault();
         let oldItems = JSON.parse(localStorage.getItem('items')) || [];
+        itemsState.quantityHistory = [itemsState.quantity];
         oldItems.push(itemsState);
         localStorage.setItem('items', JSON.stringify(oldItems));
         browserHistory.push('/');
