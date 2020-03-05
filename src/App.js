@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import NewProduct from './containers/NewProduct/NewProduct';
-import Layout from "./hoc/Layout/Layout";
+import Layout from './hoc/Layout/Layout';
 import Preview from './components/Preview/Preview';
 import List from './containers/List/List';
 import Edit from './containers/Edit/Edit';
@@ -31,7 +31,6 @@ const App = () => {
                         </Switch>
                     </Layout>
                 </Router>
-
             </React.Fragment>
         );
 };
