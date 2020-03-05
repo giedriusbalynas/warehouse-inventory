@@ -1,8 +1,8 @@
 import React from "react";
 import {ListGroup} from 'react-bootstrap';
-import {Link, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
 
-const productDetails = () => {
+const ProductDetails = () => {
     let id = useParams();
     let items = JSON.parse(localStorage.getItem('items')) || [];
 
@@ -26,9 +26,8 @@ const productDetails = () => {
                 <ListGroup.Item><strong>Price: </strong>{data.price}</ListGroup.Item>
                 <hr />
             </ListGroup>
-            <Link to="/products" className="btn btn-secondary active" role="button" aria-pressed="true">&#8678;BACK</Link>
         </div>
     );
 };
 
-export default productDetails;
+export default ProductDetails;

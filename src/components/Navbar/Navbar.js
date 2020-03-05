@@ -2,7 +2,7 @@ import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 
-const navbar = () => (
+const Navigation = () => (
     <Navbar className="bg-dark navbar-dark" expand="lg">
         <Navbar.Brand href="/" className="text-light"><strong>Warehouse</strong></Navbar.Brand>
         <Navbar.Toggle aria-controls="nav" />
@@ -14,4 +14,5 @@ const navbar = () => (
     </Navbar>
 );
 
-export default navbar;
+
+export default Navigation;

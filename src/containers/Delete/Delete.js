@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from 'react-bootstrap';
 
-const deleteProduct = (props) => {
+const DeleteProduct = (props) => {
     const handleClick = () => {
         props.deleteHandler(props.id);
     };
@@ -13,4 +13,4 @@ const deleteProduct = (props) => {
     )
 };
 
-export default deleteProduct;
+export default DeleteProduct;

@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {Link, useParams, useHistory} from "react-router-dom";
 
-const editProduct = () => {
+const EditProduct = () => {
     let items = JSON.parse(localStorage.getItem('items')) || [];
     let id = useParams();
     let mappedItems = items.filter((item) => {
@@ -21,7 +21,7 @@ const editProduct = () => {
     };
 
     const browserHistory = useHistory();
-    let currentTime = Date.now() / 1000 | 0;
+    let currentTime = Date.now();
 
     const editProductHandler = (event) => {
         event.preventDefault();
@@ -40,7 +40,7 @@ const editProduct = () => {
                     }
                 }
                 if (priceLastValue !== itemState.price) {
-                    itemState.priceHistory.push([itemState.price, currentTime]);
+                    itemState.priceHistory.push([currentTime, itemState.price]);
                     if (itemState.priceHistory.length > 5) {
                         itemState.priceHistory.splice(0, itemState.priceHistory.length - 5);
                     }
@@ -119,4 +119,4 @@ const editProduct = () => {
     )
 };
 
-export default editProduct;
+export default EditProduct;

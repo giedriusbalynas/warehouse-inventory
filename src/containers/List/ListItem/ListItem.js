@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import Delete from '../../Delete/Delete';
 import {InputGroup, FormControl} from "react-bootstrap";
 
-const listItem = props => {
+const ListItem = props => {
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
 
@@ -49,6 +49,7 @@ const listItem = props => {
                     <FormControl onChange={quantityChangeHandler}
                                  onBlur={quantityHistoryHandler}
                                  value={props.data.quantity}
+                                 className="text-right"
                                  type="number" min="0" step="1"/>
                 </InputGroup>
             </td>
@@ -57,6 +58,7 @@ const listItem = props => {
                     <FormControl onChange={priceChangeHandler}
                                  onBlur={priceHistoryHandler}
                                  value={props.data.price}
+                                 className="px-1 text-right"
                                  type="number" min="0" step="0.01"/>
                 </InputGroup>
             </td>
@@ -83,4 +85,4 @@ const listItem = props => {
 };
 
 
-export default listItem;
+export default ListItem;

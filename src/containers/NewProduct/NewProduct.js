@@ -3,7 +3,7 @@ import {Form, Button} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import {v4 as uuidv4} from 'uuid'; //this is for creating unique identifier
 
-const newProduct = () => {
+const NewProduct = () => {
     const [itemsState, setItems] = useState({
         id: uuidv4(),
         name: "",
@@ -23,13 +23,13 @@ const newProduct = () => {
     };
 
     const browserHistory = useHistory();
-    let currentTime = Date.now() / 1000 | 0;
+    let currentTime = Date.now();
 
     const createProductHandler = (event) => {
         event.preventDefault();
         let oldItems = JSON.parse(localStorage.getItem('items')) || [];
         itemsState.quantityHistory = [itemsState.quantity];
-        itemsState.priceHistory = [[itemsState.price, currentTime]];
+        itemsState.priceHistory = [[currentTime, itemsState.price]];
         oldItems.push(itemsState);
         localStorage.setItem('items', JSON.stringify(oldItems));
         browserHistory.push('/');
@@ -90,4 +90,4 @@ const newProduct = () => {
     )
 };
 
-export default newProduct;
+export default NewProduct;

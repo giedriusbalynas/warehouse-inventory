@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import './App.css';
+import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import NewProduct from './containers/NewProduct/NewProduct';
 import Layout from "./hoc/Layout/Layout";
@@ -13,8 +12,7 @@ import {
     Redirect
 } from "react-router-dom";
 
-class App extends Component {
-    render() {
+const App = () => {
         return (
             <React.Fragment>
                 <Router>
@@ -36,7 +34,6 @@ class App extends Component {
 
             </React.Fragment>
         );
-    }
-}
+};
 
 export default App;

@@ -3,7 +3,7 @@ import {Table} from 'react-bootstrap';
 import ListItem from './ListItem/ListItem';
 
 
-const list = () => {
+const List = () => {
     let items = JSON.parse(localStorage.getItem('items')) || [];
     const [listState, setState] = useState(items);
 
@@ -70,15 +70,14 @@ const list = () => {
     };
 
     const priceHistoryHandler = (id, value) => {
-        let currentTime = Date.now() / 1000 | 0;
+        let currentTime = Date.now();
         for (let i = 0; i < listState.length; i++) {
             let historyLastIndex = listState[i].priceHistory.length - 1;
             let historyLastValue = listState[i].priceHistory[historyLastIndex];
-            console.log(historyLastValue);
-            console.log(value);
+
             if (id === listState[i].id) {
                 if (historyLastValue[0] !== value) {
-                    listState[i].priceHistory.push([value, currentTime]);
+                    listState[i].priceHistory.push([currentTime, value]);
                     if (listState[i].priceHistory.length > 5) {
                         listState[i].priceHistory.splice(0, listState[i].priceHistory.length - 5);
                     }
@@ -87,7 +86,6 @@ const list = () => {
         }
         let newArr = [...listState];
         setState(newArr);
-        // console.log(listState);
         localStorage.setItem('items', JSON.stringify(newArr));
     };
 
@@ -113,7 +111,7 @@ const list = () => {
                 <th>Weight(kg)</th>
                 <th>Color</th>
                 <th>Quantity</th>
-                <th>Price(&euro;)</th>
+                <th className="px-3">Price(&euro;)</th>
                 <th>Active</th>
                 <th></th>
             </tr>
@@ -125,4 +123,4 @@ const list = () => {
     );
 };
 
-export default list;
+export default List;
