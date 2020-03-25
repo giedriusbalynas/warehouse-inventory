@@ -4,7 +4,7 @@ This project was bootstrapped with Create React App using yarn package manager.
 Bootstrap framework was used to structure layout. Little attention was paid to styling, it's all about functionality.
 Quantity and price history charts and product details are available in preview (view button). All list items in the list 
 with quantity 0 is highlighted. Changes to price and quantity are available in list (input field) and edit (edit button).
-There's a active checkbox which updates changes instantly. All data is saved in localStorage.
+There's an active checkbox which updates changes instantly. All data is saved in localStorage.
 
 
 # How to use: 
