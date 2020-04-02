@@ -9,8 +9,8 @@ There's an active checkbox which updates changes instantly. All data is saved in
 
 # How to use: 
 1. Clone repository;
-2. Run yarn install;
-3. Run yarn start;
+2. Run npm/yarn install;
+3. Run npm/yarn start;
 4. Go to: http://localhost:3000/
 5. Create some new products;
 6. Make some price/quantity changes to see price/quantity history charts
