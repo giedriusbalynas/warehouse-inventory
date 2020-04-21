@@ -4,7 +4,7 @@ import NewProduct from './containers/NewProduct/NewProduct';
 import Layout from './hoc/Layout/Layout';
 import Preview from './components/Preview/Preview';
 import List from './containers/List/List';
-import Edit from './containers/Edit/Edit';
+import Edit from './components/ListItem/Edit/Edit';
 import {
     BrowserRouter as Router,
     Switch,

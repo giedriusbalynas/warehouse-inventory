@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Table} from 'react-bootstrap';
-import ListItem from './ListItem/ListItem';
+import ListItem from '../../components/ListItem/ListItem';
 
 
 const List = () => {

@@ -1,4 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Preview/Preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/Preview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Delete/Delete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/Delete/Delete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/Edit/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/List/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/List/List.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/List/ListItem/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/PriceHistory/PriceHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/PriceHistory/PriceHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/ProductDetails/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/ProductDetails/ProductDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/QuantityHistory/QuantityHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/QuantityHistory/QuantityHistory.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
   <component name="ProjectId" id="1YM0shde8cbF2kSsJis6t51aER7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Admin\Documents\GitHub\warehouse-inventory\src\components\Preview" />
+      <recent name="C:\Users\Admin\Documents\GitHub\warehouse-inventory\src\components\ListItem" />
+      <recent name="C:\Users\Admin\Documents\GitHub\warehouse-inventory\src\components" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="" />
+      <created>1585817393913</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585817393913</updated>
+      <workItem from="1585817396681" duration="425000" />
+      <workItem from="1587471352584" duration="4982000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
 </project>

@@ -19,7 +19,6 @@ const QuantityHistory = () => {
     for (let i = 0; i < data.length; i++){
         data[i] = parseFloat(data[i]);
     }
-    console.log(data);
 
     const options = {
         title: {

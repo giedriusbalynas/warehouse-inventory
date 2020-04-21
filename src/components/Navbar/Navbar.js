@@ -7,7 +7,7 @@ const Navigation = () => (
         <Navbar.Brand href="/" className="text-light"><strong>Warehouse</strong>Inventory</Navbar.Brand>
         <Navbar.Toggle aria-controls="nav" />
         <Navbar.Collapse id="nav" className="justify-content-end text-light">
-            <Nav className="">
+            <Nav>
                 <Link to="/products/create" className="text-light" style={{textDecoration: 'none'}}>New Product</Link>
             </Nav>
         </Navbar.Collapse>

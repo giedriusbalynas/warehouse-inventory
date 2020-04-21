@@ -1,8 +1,8 @@
 import React from 'react';
 import {Tabs, Tab} from 'react-bootstrap';
-import ProductDetails from '../../containers/ProductDetails/ProductDetails'
-import QuantityHistory from '../../containers/QuantityHistory/QuantityHistory';
-import PriceHistory from '../../containers/PriceHistory/PriceHistory';
+import ProductDetails from './ProductDetails/ProductDetails'
+import QuantityHistory from './QuantityHistory/QuantityHistory';
+import PriceHistory from './PriceHistory/PriceHistory';
 import {Link} from "react-router-dom";
 
 const Preview = () => (
