@@ -1,12 +1,15 @@
 import React, {useState} from "react";
 import {Table} from 'react-bootstrap';
 import ListItem from '../../components/ListItem/ListItem';
+import {connect} from "react-redux";
 
+const List = (props) => {
+    // let  items = JSON.parse(localStorage.getItem('items')) || [];
+    // const [listState, setState] = useState(items);
+    let listState = props.items;
+    localStorage.setItem('items', JSON.stringify(listState));
 
-const List = () => {
-    let items = JSON.parse(localStorage.getItem('items')) || [];
-    const [listState, setState] = useState(items);
-
+    console.log("list", listState);
     const deleteProductHandler = (id) => {
         for (let i = 0; i < listState.length; i++) {
             if (id === listState[i].id) {
@@ -14,8 +17,8 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(listState));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(listState));
     };
 
     const checkboxHandler = (id) => {
@@ -25,8 +28,8 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(newArr));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(newArr));
     };
     const quantityChangeHandler = (id, value) => {
         for (let i = 0; i < listState.length; i++) {
@@ -35,8 +38,8 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(newArr));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const priceChangeHandler = (id, value) => {
@@ -46,8 +49,8 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(newArr));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const quantityHistoryHandler = (id, value) => {
@@ -65,8 +68,8 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(newArr));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const priceHistoryHandler = (id, value) => {
@@ -85,15 +88,14 @@ const List = () => {
             }
         }
         let newArr = [...listState];
-        setState(newArr);
-        localStorage.setItem('items', JSON.stringify(newArr));
+        // setState(newArr);
+        // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     let mappedItems = listState.map((item, index) => {
         return <ListItem
             data={item}
             key={index}
-            deleteHandler={deleteProductHandler}
             checkHandler={checkboxHandler}
             quantityHandler={quantityChangeHandler}
             priceHandler={priceChangeHandler}
@@ -123,4 +125,10 @@ const List = () => {
     );
 };
 
-export default List;
+const mapStateToProps = state => {
+    return {
+        items: state.items
+    }
+};
+
+export default connect(mapStateToProps)(List);

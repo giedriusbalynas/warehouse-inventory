@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {useHistory} from "react-router-dom";
 import {v4 as uuidv4} from 'uuid'; //this is for creating unique identifier
+import {connect} from 'react-redux';
+import * as actionTypes from '../../store/actions';
 
-const NewProduct = () => {
+const NewProduct = (props) => {
     const [itemsState, setItems] = useState({
         id: uuidv4(),
         name: "",
@@ -23,22 +25,17 @@ const NewProduct = () => {
     };
 
     const browserHistory = useHistory();
-    let currentTime = Date.now();
-
-    const createProductHandler = (event) => {
+    const submitHandler = (event) => {
         event.preventDefault();
-        let oldItems = JSON.parse(localStorage.getItem('items')) || [];
         itemsState.quantityHistory = [itemsState.quantity];
-        itemsState.priceHistory = [[currentTime, itemsState.price]];
-        oldItems.push(itemsState);
-        localStorage.setItem('items', JSON.stringify(oldItems));
+        itemsState.priceHistory = [[Date.now(), itemsState.price]];
+        props.handleSubmit(itemsState);
         browserHistory.push('/');
     };
-
     return (
         <div>
             <h2 className="mt-5">New Product</h2>
-            <Form onSubmit={createProductHandler} className="my-5">
+            <Form onSubmit={submitHandler} className="my-5">
                 <Form.Group>
                     <Form.Label>Name</Form.Label>
                     <Form.Control onChange={inputChangeHandler}
@@ -90,4 +87,13 @@ const NewProduct = () => {
     )
 };
 
-export default NewProduct;
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSubmit: (state) => dispatch ({
+            type: actionTypes.ADD_ITEMS,
+            items: state
+        })
+    }
+};
+
+export default connect(null, mapDispatchToProps)(NewProduct);

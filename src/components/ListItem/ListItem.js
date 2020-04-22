@@ -1,12 +1,14 @@
 import React from "react";
-import {Form} from 'react-bootstrap';
+import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
-import Delete from './Delete/Delete';
 import {InputGroup, FormControl} from "react-bootstrap";
+import {connect} from 'react-redux';
+import * as actionTypes from '../../store/actions';
 
 const ListItem = props => {
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
+    console.log("ListItem: ", props);
 
     const checkboxHandler = () => {
         props.checkHandler(props.data.id);
@@ -65,7 +67,7 @@ const ListItem = props => {
             <td>
                 <Form.Group className="d-flex justify-content-center">
                     <Form.Check onChange={checkboxHandler}
-                                checked={props.data.isActive} />
+                                checked={props.data.isActive}/>
                 </Form.Group>
             </td>
             <td className="d-flex">
@@ -77,12 +79,25 @@ const ListItem = props => {
                       className="btn btn-primary active"
                       role="button"
                       aria-pressed="true">EDIT</Link>
-                <Delete id={props.data.id}
-                        deleteHandler={props.deleteHandler}/>
+                <Button onClick={() => props.handleDelete(props.data.id)} variant="danger">DELETE</Button>
             </td>
         </tr>
     )
 };
 
+const mapStateToProps = state => {
+  return {
 
-export default ListItem;
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        handleDelete: (id) => dispatch({
+            type: actionTypes.DELETE_ITEMS,
+            itemId: id
+        })
+    }
+};
+
+export default connect(null, mapDispatchToProps)(ListItem);

@@ -6,16 +6,14 @@ import Preview from './components/Preview/Preview';
 import List from './containers/List/List';
 import Edit from './components/ListItem/Edit/Edit';
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     Redirect
-} from "react-router-dom";
+} from 'react-router-dom';
 
 const App = () => {
         return (
             <React.Fragment>
-                <Router>
                     <Navbar/>
                     <Layout>
                         <Switch>
@@ -30,7 +28,6 @@ const App = () => {
                             </Route>
                         </Switch>
                     </Layout>
-                </Router>
             </React.Fragment>
         );
 };
