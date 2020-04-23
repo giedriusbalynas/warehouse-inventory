@@ -2,11 +2,12 @@ import React from "react";
 import {useParams} from "react-router-dom";
 import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
+import {connect} from 'react-redux';
 
-const QuantityHistory = () => {
+const QuantityHistory = (props) => {
     let id = useParams();
-    let items = JSON.parse(localStorage.getItem('items')) || [];
-
+    let items = props.items || [];
+    console.log(props);
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;
@@ -51,7 +52,12 @@ const QuantityHistory = () => {
         highcharts={Highcharts}
         options={options} />
     </div>
-
 )};
 
-export default QuantityHistory;
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+};
+
+export default connect(mapStateToProps)(QuantityHistory);

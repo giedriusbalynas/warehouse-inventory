@@ -5,7 +5,7 @@ import QuantityHistory from './QuantityHistory/QuantityHistory';
 import PriceHistory from './PriceHistory/PriceHistory';
 import {Link} from "react-router-dom";
 
-const Preview = () => (
+const Preview = (props) => (
     <div>
     <Tabs className="my-5" defaultActiveKey="list" id="uncontrolled-tab-example">
         <Tab eventKey="list" title="Product details">

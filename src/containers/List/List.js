@@ -2,22 +2,11 @@ import React, {useState} from "react";
 import {Table} from 'react-bootstrap';
 import ListItem from '../../components/ListItem/ListItem';
 import {connect} from "react-redux";
+import * as actionTypes from "../../store/actions";
 
 const List = (props) => {
-
     let listItems = props.items;
-    // localStorage.setItem('items', JSON.stringify(listItems));
 
-    const checkboxHandler = (id) => {
-        for (let i = 0; i < listItems.length; i++) {
-            if (id === listItems[i].id) {
-                listItems[i].isActive = !listItems[i].isActive;
-            }
-        }
-        let newArr = [...listItems];
-        // setState(newArr);
-        // localStorage.setItem('items', JSON.stringify(newArr));
-    };
     const quantityChangeHandler = (id, value) => {
         for (let i = 0; i < listItems.length; i++) {
             if (id === listItems[i].id) {
@@ -83,11 +72,10 @@ const List = (props) => {
         return <ListItem
             data={item}
             key={index}
-            checkHandler={checkboxHandler}
             quantityHandler={quantityChangeHandler}
             priceHandler={priceChangeHandler}
             quantityHistory={quantityHistoryHandler}
-            priceHistory={priceHistoryHandler} />
+            priceHistory={priceHistoryHandler}/>
     });
 
 
@@ -118,4 +106,13 @@ const mapStateToProps = state => {
     }
 };
 
-export default connect(mapStateToProps)(List);
+const mapDispatchToProps = dispatch => {
+    return {
+        handleChange: (state) => dispatch ({
+            type: actionTypes.EDIT_ITEMS,
+            item: state
+        })
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);

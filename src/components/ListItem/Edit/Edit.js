@@ -30,7 +30,7 @@ const EditProduct = (props) => {
         for (let i = 0; i < items.length; i++) {
             let quantityLastIndex = itemState.quantityHistory.length - 1;
             let quantityLastValue = itemState.quantityHistory[quantityLastIndex];
-            console.log(itemState.quantityHistory.length);
+
             let priceLastIndex = itemState.priceHistory.length -1;
             let priceLastValue = itemState.priceHistory[priceLastIndex][0];
 

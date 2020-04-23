@@ -1,11 +1,12 @@
-import React from "react";
+import React from 'react';
 import {ListGroup} from 'react-bootstrap';
-import {useParams} from "react-router-dom";
+import {useParams} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
     let id = useParams();
-    let items = JSON.parse(localStorage.getItem('items')) || [];
-
+    let items = props.items || [];
+    console.log(items);
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;
@@ -14,7 +15,7 @@ const ProductDetails = () => {
     });
 
     let data = mappedItems[0];
-
+    console.log(data);
     return(
         <div>
             <h2 className="mt-5">{data.name}</h2>
@@ -30,4 +31,10 @@ const ProductDetails = () => {
     );
 };
 
-export default ProductDetails;
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+};
+
+export default connect(mapStateToProps)(ProductDetails);

@@ -1,12 +1,12 @@
 import React from 'react';
 import Highcharts from 'highcharts';
-import HighchartsReact from "highcharts-react-official";
-import {useParams} from "react-router-dom";
+import HighchartsReact from 'highcharts-react-official';
+import {useParams} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-
-const PriceHistory = () => {
+const PriceHistory = (props) => {
     let id = useParams();
-    let items = JSON.parse(localStorage.getItem('items')) || [];
+    let items = props.items || [];
 
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
@@ -60,4 +60,10 @@ const PriceHistory = () => {
     </div>
     )};
 
-export default PriceHistory;
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+};
+
+export default connect(mapStateToProps)(PriceHistory);

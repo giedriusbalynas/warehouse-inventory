@@ -10,7 +10,9 @@ const ListItem = props => {
     const viewLink = "/products/" + props.data.id;
 
     const checkboxHandler = () => {
-        props.checkHandler(props.data.id);
+        props.data.isActive = !props.data.isActive;
+        props.handleEdit(props.data)
+        // props.checkHandler(props.data.id);
     };
 
     const quantityChangeHandler = (e) => {
@@ -89,6 +91,10 @@ const mapDispatchToProps = dispatch => {
         handleDelete: (id) => dispatch({
             type: actionTypes.DELETE_ITEMS,
             itemId: id
+        }),
+        handleEdit: (data) => dispatch({
+            type: actionTypes.EDIT_ITEMS,
+            item: data
         })
     }
 };
