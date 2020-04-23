@@ -4,95 +4,82 @@ import ListItem from '../../components/ListItem/ListItem';
 import {connect} from "react-redux";
 
 const List = (props) => {
-    // let  items = JSON.parse(localStorage.getItem('items')) || [];
-    // const [listState, setState] = useState(items);
-    let listState = props.items;
-    localStorage.setItem('items', JSON.stringify(listState));
 
-    console.log("list", listState);
-    const deleteProductHandler = (id) => {
-        for (let i = 0; i < listState.length; i++) {
-            if (id === listState[i].id) {
-                listState.splice(i, 1);
-            }
-        }
-        let newArr = [...listState];
-        // setState(newArr);
-        // localStorage.setItem('items', JSON.stringify(listState));
-    };
+    let listItems = props.items;
+    // localStorage.setItem('items', JSON.stringify(listItems));
 
     const checkboxHandler = (id) => {
-        for (let i = 0; i < listState.length; i++) {
-            if (id === listState[i].id) {
-                listState[i].isActive = !listState[i].isActive;
+        for (let i = 0; i < listItems.length; i++) {
+            if (id === listItems[i].id) {
+                listItems[i].isActive = !listItems[i].isActive;
             }
         }
-        let newArr = [...listState];
+        let newArr = [...listItems];
         // setState(newArr);
         // localStorage.setItem('items', JSON.stringify(newArr));
     };
     const quantityChangeHandler = (id, value) => {
-        for (let i = 0; i < listState.length; i++) {
-            if (id === listState[i].id) {
-                listState[i].quantity = value;
+        for (let i = 0; i < listItems.length; i++) {
+            if (id === listItems[i].id) {
+                listItems[i].quantity = value;
             }
         }
-        let newArr = [...listState];
+        let newArr = [...listItems];
         // setState(newArr);
         // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const priceChangeHandler = (id, value) => {
-        for (let i = 0; i < listState.length; i++) {
-            if (id === listState[i].id) {
-                listState[i].price = value;
+        for (let i = 0; i < listItems.length; i++) {
+            if (id === listItems[i].id) {
+                listItems[i].price = value;
             }
         }
-        let newArr = [...listState];
+        let newArr = [...listItems];
         // setState(newArr);
         // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const quantityHistoryHandler = (id, value) => {
-        for (let i = 0; i < listState.length; i++) {
-            let historyLastIndex = listState[i].quantityHistory.length - 1;
-            let historyLastValue = listState[i].quantityHistory[historyLastIndex];
+        for (let i = 0; i < listItems.length; i++) {
+            let historyLastIndex = listItems[i].quantityHistory.length - 1;
+            let historyLastValue = listItems[i].quantityHistory[historyLastIndex];
 
-            if (id === listState[i].id) {
+            if (id === listItems[i].id) {
                 if (historyLastValue !== value) {
-                    listState[i].quantityHistory.push(value);
-                    if (listState[i].quantityHistory.length > 5) {
-                        listState[i].quantityHistory.splice(0, listState[i].quantityHistory.length - 5);
+                    listItems[i].quantityHistory.push(value);
+                    if (listItems[i].quantityHistory.length > 5) {
+                        listItems[i].quantityHistory.splice(0, listItems[i].quantityHistory.length - 5);
                     }
                 }
             }
         }
-        let newArr = [...listState];
+        let newArr = [...listItems];
         // setState(newArr);
         // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
     const priceHistoryHandler = (id, value) => {
         let currentTime = Date.now();
-        for (let i = 0; i < listState.length; i++) {
-            let historyLastIndex = listState[i].priceHistory.length - 1;
-            let historyLastValue = listState[i].priceHistory[historyLastIndex];
+        for (let i = 0; i < listItems.length; i++) {
+            let historyLastIndex = listItems[i].priceHistory.length - 1;
+            let historyLastValue = listItems[i].priceHistory[historyLastIndex];
 
-            if (id === listState[i].id) {
+            if (id === listItems[i].id) {
                 if (historyLastValue[0] !== value) {
-                    listState[i].priceHistory.push([currentTime, value]);
-                    if (listState[i].priceHistory.length > 5) {
-                        listState[i].priceHistory.splice(0, listState[i].priceHistory.length - 5);
+                    listItems[i].priceHistory.push([currentTime, value]);
+                    if (listItems[i].priceHistory.length > 5) {
+                        listItems[i].priceHistory.splice(0, listItems[i].priceHistory.length - 5);
                     }
                 }
             }
         }
-        let newArr = [...listState];
+        let newArr = [...listItems];
         // setState(newArr);
         // localStorage.setItem('items', JSON.stringify(newArr));
     };
 
-    let mappedItems = listState.map((item, index) => {
+    let mappedItems = listItems.map((item, index) => {
         return <ListItem
             data={item}
             key={index}

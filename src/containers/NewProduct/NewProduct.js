@@ -19,6 +19,7 @@ const NewProduct = (props) => {
         priceHistory: []
     });
 
+    console.log(props);
     const inputChangeHandler = e => {
         const {name, value} = e.target;
         setItems({...itemsState, [name]: value});
@@ -86,6 +87,11 @@ const NewProduct = (props) => {
         </div>
     )
 };
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+};
 
 const mapDispatchToProps = dispatch => {
     return {
@@ -96,4 +102,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(null, mapDispatchToProps)(NewProduct);
+export default connect(mapStateToProps, mapDispatchToProps)(NewProduct);

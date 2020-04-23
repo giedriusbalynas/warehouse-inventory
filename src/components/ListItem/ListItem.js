@@ -8,7 +8,6 @@ import * as actionTypes from '../../store/actions';
 const ListItem = props => {
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
-    console.log("ListItem: ", props);
 
     const checkboxHandler = () => {
         props.checkHandler(props.data.id);
@@ -83,12 +82,6 @@ const ListItem = props => {
             </td>
         </tr>
     )
-};
-
-const mapStateToProps = state => {
-  return {
-
-  }
 };
 
 const mapDispatchToProps = dispatch => {

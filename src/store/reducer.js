@@ -1,14 +1,11 @@
 import * as actionTypes from './actions';
-import {v4 as uuidv4} from "uuid";
 
 const initialState = {
     items: JSON.parse(localStorage.getItem('items')) || [],
-
 };
 
 const reducer = (state = initialState, action) => {
-    // console.log("reduceris: ", action.items);
-    console.log(" reducer id: ", action);
+
     switch (action.type) {
         case actionTypes.ADD_ITEMS:
             return {
@@ -23,8 +20,10 @@ const reducer = (state = initialState, action) => {
                 items: newArray
             };
         case actionTypes.EDIT_ITEMS:
-            return {
-
+            const editedArray =  state.items.filter(item => item.id !== action.item.id) ;
+             return {
+                ...state.items,
+                items: editedArray.concat(action.item)
             };
         default:
             return state

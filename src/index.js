@@ -7,18 +7,19 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import reducer from './store/reducer';
+import {loadState, saveState} from './localStorage';
 
-const store = createStore(reducer);
 
-function handleChange() {
+const persistedState = loadState();
+const store = createStore(
+    reducer,
+    persistedState,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
-   let variab = store.getState();
-    console.log('store changed', variab );
-
-}
-
-const unsubscribe = store.subscribe(handleChange);
-unsubscribe();
+store.subscribe(() => {
+    saveState(store.getState());
+});
 
 const app = (
     <Provider store={store}>

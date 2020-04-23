@@ -1,18 +1,20 @@
 import React, {useState} from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {Link, useParams, useHistory} from "react-router-dom";
+import {connect} from 'react-redux';
+import * as actionTypes from "../../../store/actions";
 
-const EditProduct = () => {
-    let items = JSON.parse(localStorage.getItem('items')) || [];
+const EditProduct = (props) => {
+    let items = props.items || [];
     let id = useParams();
-    let mappedItems = items.filter((item) => {
+    let filteredItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;
         }
-        return mappedItems;
+        return filteredItems;
     });
 
-    let data = mappedItems[0];
+    let data = filteredItems[0];
     const [itemState, setItems] = useState(data);
 
     const inputChangeHandler = e => {
@@ -28,7 +30,7 @@ const EditProduct = () => {
         for (let i = 0; i < items.length; i++) {
             let quantityLastIndex = itemState.quantityHistory.length - 1;
             let quantityLastValue = itemState.quantityHistory[quantityLastIndex];
-
+            console.log(itemState.quantityHistory.length);
             let priceLastIndex = itemState.priceHistory.length -1;
             let priceLastValue = itemState.priceHistory[priceLastIndex][0];
 
@@ -48,10 +50,9 @@ const EditProduct = () => {
                 items[i] = itemState;
             }
         }
-        localStorage.setItem('items', JSON.stringify(items));
+        props.handleSubmit(itemState);
         browserHistory.push('/');
     };
-
 
     return (
         <div>
@@ -119,4 +120,18 @@ const EditProduct = () => {
     )
 };
 
-export default EditProduct;
+const mapStateToProps = (state) => {
+    return {
+        items: state.items
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        handleSubmit: (state) => dispatch ({
+            type: actionTypes.EDIT_ITEMS,
+            item: state
+        })
+    }
+};
+export default connect(mapStateToProps,mapDispatchToProps)(EditProduct);
