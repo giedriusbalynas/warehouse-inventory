@@ -1,13 +1,13 @@
-import React from "react";
-import {useParams} from "react-router-dom";
-import HighchartsReact from "highcharts-react-official";
-import Highcharts from "highcharts";
+import React from 'react';
+import {useParams} from 'react-router-dom';
+import HighchartsReact from 'highcharts-react-official';
+import Highcharts from 'highcharts';
 import {connect} from 'react-redux';
 
 const QuantityHistory = (props) => {
     let id = useParams();
     let items = props.items || [];
-    console.log(props);
+
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;

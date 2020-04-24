@@ -3,7 +3,7 @@ import {Tabs, Tab} from 'react-bootstrap';
 import ProductDetails from './ProductDetails/ProductDetails'
 import QuantityHistory from './QuantityHistory/QuantityHistory';
 import PriceHistory from './PriceHistory/PriceHistory';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Preview = (props) => (
     <div>

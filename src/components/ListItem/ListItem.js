@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Form} from 'react-bootstrap';
 import {Link} from "react-router-dom";
 import {InputGroup, FormControl} from "react-bootstrap";
@@ -6,23 +6,31 @@ import {connect} from 'react-redux';
 import * as actionTypes from '../../store/actions';
 
 const ListItem = props => {
+    const [itemState, setItems] = useState(props.data);
+
     const editLink = "/products/" + props.data.id + "/edit";
     const viewLink = "/products/" + props.data.id;
 
     const checkboxHandler = () => {
-        props.data.isActive = !props.data.isActive;
-        props.handleEdit(props.data)
-        // props.checkHandler(props.data.id);
+        setItems({
+            ...itemState,
+            isActive: !itemState.isActive
+        });
+        props.handleEdit(itemState);
     };
 
     const quantityChangeHandler = (e) => {
-        const value = e.target.value;
-        props.quantityHandler(props.data.id, value);
+        setItems({
+            ...itemState,
+            quantity: e.target.value
+        });
     };
 
-    const priceChangeHandler = (event) => {
-        const value = event.target.value;
-        props.priceHandler(props.data.id, value);
+    const priceChangeHandler = (e) => {
+        setItems({
+            ...itemState,
+            price: e.target.value
+        });
     };
 
     let style = "text-right";
@@ -30,16 +38,6 @@ const ListItem = props => {
     if (quantity === 0) {
         style += " bg-warning";
     }
-
-    const quantityHistoryHandler = (event) => {
-        const value = event.target.value;
-        props.quantityHistory(props.data.id, value)
-    };
-
-    const priceHistoryHandler = (event) => {
-        const value = event.target.value;
-        props.priceHistory(props.data.id, value)
-    };
 
     return (
         <tr className={style}>
@@ -49,18 +47,18 @@ const ListItem = props => {
             <td>{props.data.color}</td>
             <td>
                 <InputGroup size="sm">
-                    <FormControl onChange={quantityChangeHandler}
-                                 onBlur={quantityHistoryHandler}
-                                 value={props.data.quantity}
+                    <FormControl onChange={(e) => quantityChangeHandler(e)}
+                                 onBlur={() => props.handleEdit(itemState)}
+                                 value={itemState.quantity}
                                  className="text-right"
                                  type="number" min="0" step="1"/>
                 </InputGroup>
             </td>
             <td>
                 <InputGroup size="sm">
-                    <FormControl onChange={priceChangeHandler}
-                                 onBlur={priceHistoryHandler}
-                                 value={props.data.price}
+                    <FormControl onChange={(e) => priceChangeHandler(e)}
+                                 onBlur={() => props.handleEdit(itemState)}
+                                 value={itemState.price}
                                  className="px-1 text-right"
                                  type="number" min="0" step="0.01"/>
                 </InputGroup>
@@ -68,7 +66,7 @@ const ListItem = props => {
             <td>
                 <Form.Group className="d-flex justify-content-center">
                     <Form.Check onChange={checkboxHandler}
-                                checked={props.data.isActive}/>
+                                checked={itemState.isActive}/>
                 </Form.Group>
             </td>
             <td className="d-flex">

@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
 const ProductDetails = (props) => {
     let id = useParams();
     let items = props.items || [];
-    console.log(items);
+
     let mappedItems = items.filter((item) => {
         if (item.id === id.id) {
             return item;
@@ -15,7 +15,7 @@ const ProductDetails = (props) => {
     });
 
     let data = mappedItems[0];
-    console.log(data);
+
     return(
         <div>
             <h2 className="mt-5">{data.name}</h2>
