@@ -23,33 +23,9 @@ const EditProduct = (props) => {
     };
 
     const browserHistory = useHistory();
-    let currentTime = Date.now();
 
-    const editProductHandler = (event) => {
-        event.preventDefault();
-        for (let i = 0; i < items.length; i++) {
-            let quantityLastIndex = itemState.quantityHistory.length - 1;
-            let quantityLastValue = itemState.quantityHistory[quantityLastIndex];
-
-            let priceLastIndex = itemState.priceHistory.length -1;
-            let priceLastValue = itemState.priceHistory[priceLastIndex][0];
-
-            if (itemState.id === items[i].id) {
-                if (quantityLastValue !== itemState.quantity) {
-                    itemState.quantityHistory.push(itemState.quantity);
-                    if (itemState.quantityHistory.length > 5) {
-                        itemState.quantityHistory.splice(0, itemState.quantityHistory.length - 5);
-                    }
-                }
-                if (priceLastValue !== itemState.price) {
-                    itemState.priceHistory.push([currentTime, itemState.price]);
-                    if (itemState.priceHistory.length > 5) {
-                        itemState.priceHistory.splice(0, itemState.priceHistory.length - 5);
-                    }
-                }
-                items[i] = itemState;
-            }
-        }
+    const editProductHandler = (e) => {
+        e.preventDefault();
         props.handleSubmit(itemState);
         browserHistory.push('/');
     };

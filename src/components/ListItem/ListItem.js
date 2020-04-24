@@ -12,10 +12,8 @@ const ListItem = props => {
     const viewLink = "/products/" + props.data.id;
 
     const checkboxHandler = () => {
-        setItems({
-            ...itemState,
-            isActive: !itemState.isActive
-        });
+        itemState.isActive = !itemState.isActive;
+        setItems({...itemState});
         props.handleEdit(itemState);
     };
 
@@ -83,6 +81,12 @@ const ListItem = props => {
         </tr>
     )
 };
+
+// const mapStateToProps = (state) => {
+//     return {
+//         items: state
+//     }
+// };
 
 const mapDispatchToProps = dispatch => {
     return {

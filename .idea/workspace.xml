@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ListItem/Edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/Edit/Edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preview/Preview.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/Preview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preview/ProductDetails/ProductDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/ProductDetails/ProductDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preview/QuantityHistory/QuantityHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preview/QuantityHistory/QuantityHistory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/List/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/List/List.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
     </list>
@@ -33,6 +32,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
@@ -59,7 +59,7 @@
       <workItem from="1587471352584" duration="20712000" />
       <workItem from="1587537718867" duration="17349000" />
       <workItem from="1587635874063" duration="19723000" />
-      <workItem from="1587712351541" duration="14509000" />
+      <workItem from="1587712351541" duration="18940000" />
     </task>
     <task id="LOCAL-00001" summary="Changed file structure, added react-router dependency to avoid IDE errors.">
       <created>1587478319156</created>
@@ -89,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587659302338</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed all bugs in listItem input fields and checkbox, fixed quantity and price charts. Added some utility functions to make my code leaner (util.js).">
+      <created>1587731502749</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1587731502749</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +106,8 @@
     <MESSAGE value="Changed file structure, added react-router dependency to avoid IDE errors." />
     <MESSAGE value="Added react-redux, done add and delete reducers and changed some logic." />
     <MESSAGE value="All reducers are done. Added subscribe method to update localStorage on changes." />
-    <option name="LAST_COMMIT_MESSAGE" value="All reducers are done. Added subscribe method to update localStorage on changes." />
+    <MESSAGE value="Fixed all bugs in listItem input fields and checkbox, fixed quantity and price charts. Added some utility functions to make my code leaner (util.js)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed all bugs in listItem input fields and checkbox, fixed quantity and price charts. Added some utility functions to make my code leaner (util.js)." />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="178" key="#Notifications" timestamp="1587723946802">
@@ -110,17 +118,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587478556644" />
-    <state x="780" y="56" key="CommitChangelistDialog2" timestamp="1587659300664">
+    <state x="780" y="56" key="CommitChangelistDialog2" timestamp="1587731501011">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="780" y="56" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587659300664" />
+    <state x="780" y="56" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587731501011" />
     <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1587636899411">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587636899411" />
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587659309347">
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587731515109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587659309347" />
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587731515109" />
   </component>
 </project>

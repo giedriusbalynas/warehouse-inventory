@@ -19,7 +19,6 @@ const reducer = (state = initialState, action) => {
         case actionTypes.DELETE_ITEMS:
             const newArray = state.items.filter(item => item.id !== action.itemId);
             return {
-
                 items:
                     newArray
             };
