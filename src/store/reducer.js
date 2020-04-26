@@ -8,10 +8,6 @@ const initialState = {
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_ITEMS:
-            console.log({
-                items: [...state.items,
-                    action.items]
-            });
             return {
                 items: [...state.items,
                         action.items]

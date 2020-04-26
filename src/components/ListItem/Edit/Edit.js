@@ -24,12 +24,12 @@ const EditProduct = (props) => {
 
     const browserHistory = useHistory();
 
-    const editProductHandler = (e) => {
+    const editProductHandler = (form, e) => {
         e.preventDefault();
         props.handleSubmit(itemState);
         browserHistory.push('/');
     };
-    console.log(itemState);
+
 
     return (
         <div>
@@ -37,7 +37,7 @@ const EditProduct = (props) => {
                 data={itemState}
                 inputHandler={inputChangeHandler}
                 submitHandler={editProductHandler}
-                formType='Edit'
+                formType="Edit"
             />
         </div>
     )

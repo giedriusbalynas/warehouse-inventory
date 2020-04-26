@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-// import {Form, Button} from 'react-bootstrap';
 import {useHistory} from 'react-router-dom';
 import CustomForm from '../../components/UI/CustomForm/CustomForm';
 import {v4 as uuidv4} from 'uuid'; //this is for creating unique identifier
@@ -14,21 +13,20 @@ const NewProduct = (props) => {
         type: "",
         weight: 0,
         color: "",
-        quantity: "",
+        quantity: 0,
         price: 0,
         isActive: true,
         quantityHistory: [],
         priceHistory: []
     });
 
-    console.log(props);
     const inputChangeHandler = e => {
         const {name, value} = e.target;
         setItems({...itemsState, [name]: value});
     };
 
     const browserHistory = useHistory();
-    const submitHandler = (event) => {
+    const submitHandler = (form, event) => {
         event.preventDefault();
         itemsState.quantityHistory = [itemsState.quantity];
         itemsState.priceHistory = [[Date.now(), itemsState.price]];
@@ -41,7 +39,7 @@ const NewProduct = (props) => {
                 data={itemsState}
                 inputHandler={inputChangeHandler}
                 submitHandler={submitHandler}
-                formType='New'
+                formType="New"
             />
         </div>
     )
