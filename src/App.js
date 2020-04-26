@@ -3,8 +3,8 @@ import Navbar from './components/Navbar/Navbar';
 import NewProduct from './containers/NewProduct/NewProduct';
 import Layout from './hoc/Layout/Layout';
 import Preview from './components/Preview/Preview';
-import List from './containers/List/List';
-import Edit from './components/ListItem/Edit/Edit';
+import List from './components/List/List';
+import Edit from './containers/ListItem/Edit/Edit';
 import {
     Switch,
     Route,

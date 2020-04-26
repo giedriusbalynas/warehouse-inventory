@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {useParams, useHistory} from 'react-router-dom';
-import CustomForm from '../../UI/CustomForm/CustomForm';
+import CustomForm from '../../../components/UI/CustomForm/CustomForm';
 import {connect} from 'react-redux';
 import * as actionTypes from '../../../store/actions';
 

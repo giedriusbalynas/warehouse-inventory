@@ -1,6 +1,6 @@
 import React from "react";
 import {Table} from 'react-bootstrap';
-import ListItem from '../../components/ListItem/ListItem';
+import ListItem from '../../containers/ListItem/ListItem';
 import {connect} from "react-redux";
 
 const List = (props) => {
