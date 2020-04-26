@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListItem/Edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/Edit/Edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ListItem/ListItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/containers/List/List.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/List/List.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/containers/NewProduct/NewProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/NewProduct/NewProduct.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../burger-builder-app" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -59,7 +58,8 @@
       <workItem from="1587471352584" duration="20712000" />
       <workItem from="1587537718867" duration="17349000" />
       <workItem from="1587635874063" duration="19723000" />
-      <workItem from="1587712351541" duration="18940000" />
+      <workItem from="1587712351541" duration="19718000" />
+      <workItem from="1587913675794" duration="5690000" />
     </task>
     <task id="LOCAL-00001" summary="Changed file structure, added react-router dependency to avoid IDE errors.">
       <created>1587478319156</created>
@@ -96,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587731502749</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Fixed delete listItem bug, fixed listItem input fields and checkbox re-rendering bugs.">
+      <created>1587736071207</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1587736071207</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,28 +114,29 @@
     <MESSAGE value="Added react-redux, done add and delete reducers and changed some logic." />
     <MESSAGE value="All reducers are done. Added subscribe method to update localStorage on changes." />
     <MESSAGE value="Fixed all bugs in listItem input fields and checkbox, fixed quantity and price charts. Added some utility functions to make my code leaner (util.js)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed all bugs in listItem input fields and checkbox, fixed quantity and price charts. Added some utility functions to make my code leaner (util.js)." />
+    <MESSAGE value="Fixed delete listItem bug, fixed listItem input fields and checkbox re-rendering bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed delete listItem bug, fixed listItem input fields and checkbox re-rendering bugs." />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="178" key="#Notifications" timestamp="1587723946802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="174" y="178" key="#Notifications/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587723946802" />
-    <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587478556644">
+    <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587916347144">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587478556644" />
-    <state x="780" y="56" key="CommitChangelistDialog2" timestamp="1587731501011">
+    <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587916347144" />
+    <state x="498" y="56" key="CommitChangelistDialog2" timestamp="1587736069893">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="780" y="56" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587731501011" />
-    <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1587636899411">
+    <state x="498" y="56" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587736069893" />
+    <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1587915702048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587636899411" />
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587731515109">
+    <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587915702048" />
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587736079398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587731515109" />
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587736079398" />
   </component>
 </project>

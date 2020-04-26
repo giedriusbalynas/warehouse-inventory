@@ -13,7 +13,6 @@ const List = (props) => {
         />
     });
 
-
     return (
         <Table responsive className="my-5">
             <thead>

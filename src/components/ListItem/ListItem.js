@@ -82,12 +82,6 @@ const ListItem = props => {
     )
 };
 
-// const mapStateToProps = (state) => {
-//     return {
-//         items: state
-//     }
-// };
-
 const mapDispatchToProps = dispatch => {
     return {
         handleDelete: (id) => dispatch({
