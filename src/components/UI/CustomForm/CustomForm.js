@@ -5,7 +5,6 @@ import {useForm} from 'react-hook-form';
 import CustomInput from "./CustomInput/CustomInput";
 
 const CustomForm = (props) => {
-    console.log(props);
     const {register, handleSubmit, errors} = useForm();
     let formFields = [
         {key: "name", label: "Name", type: "text"},
@@ -27,6 +26,7 @@ const CustomForm = (props) => {
                 errors={errors}
                 register={register}
                 data={props.data}
+                inputHandler={props.inputHandler}
             />
         )
     });

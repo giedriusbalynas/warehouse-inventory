@@ -14,6 +14,6 @@ const CustomInput = (props) => (
             ref={props.register({required: true})}/>
         {props.errors[props.name] && <p style={{color: "red"}}>Product {props.name} is required</p>}
     </Form.Group>
-    );
+);
 
 export default CustomInput;
