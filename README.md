@@ -14,3 +14,11 @@ There's an active checkbox which updates changes instantly. All data is saved in
 4. Go to: http://localhost:3000/
 5. Create some new products;
 6. Make some price/quantity changes to see price/quantity history charts
+
+
+# Additional changes:
+
+- added react redux for state management;
+- added dynamic custom form with basic validation;
+- made the code leaner and easier to read;
+- changed file structure based on component/container system.
