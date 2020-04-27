@@ -5,71 +5,36 @@ import {useForm} from 'react-hook-form';
 
 const CustomForm = (props) => {
     const {register, handleSubmit, errors} = useForm();
+    let formFields = [
+        {key: "name", label: "Name", type: "text"},
+        {key: "type", label: "Type", type: "text"},
+        {key: "weight", label: "Weight", type: "number", step: "0.01"},
+        {key: "color", label: "Color", type: "text"},
+        {key: "quantity", label: "Quantity", type: "number", step: "1"},
+        {key: "price", label: "Price", type: "number", step: "0.01"}
+    ];
+
+    let mappedFields = formFields.map((field) => {
+        return (
+            <Form.Group key={field.key}>
+                <Form.Label>{field.label}</Form.Label>
+                <Form.Control
+                              onChange={props.inputHandler}
+                              name={field.key}
+                              type={field.type}
+                              step={field.step}
+                              defaultValue={props.data[field.key]}
+                              placeholder={"Product " + field.key}
+                              ref={register({required: true})}/>
+                {errors[field.key] && <p style={{color: "red"}}>Product {field.key} is required</p>}
+            </Form.Group>
+        )
+    });
+
     return (
         <Form className="my-5" onSubmit={handleSubmit(props.submitHandler)}>
             <h2 className="my-5">{props.formType} Product</h2>
-            <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="name"
-                              type="text"
-                              defaultValue={props.data.name}
-                              placeholder="Product name"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.name && <p style={{color: "red"}}>Product name is required</p>}
-            <Form.Group>
-                <Form.Label>Type</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="type"
-                              type="text"
-                              defaultValue={props.data.type}
-                              placeholder="Product type"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.type && <p style={{color: "red"}}>Product type is required</p>}
-            <Form.Group>
-                <Form.Label>Weight</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="weight"
-                              type="number"
-                              step="any"
-                              defaultValue={props.data.weight}
-                              placeholder="Product weight"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.weight && <p style={{color: "red"}}>Product weight is required</p>}
-            <Form.Group>
-                <Form.Label>Color</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="color"
-                              type="text"
-                              defaultValue={props.data.color}
-                              placeholder="Product color"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.color && <p style={{color: "red"}}>Product color is required</p>}
-            <Form.Group>
-                <Form.Label>Quantity</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="quantity"
-                              type="text"
-                              defaultValue={props.data.quantity}
-                              placeholder="Product quantity"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.quantity && <p style={{color: "red"}}>Product quantity is required</p>}
-            <Form.Group>
-                <Form.Label>Price</Form.Label>
-                <Form.Control onChange={props.inputHandler}
-                              name="price"
-                              type="number"
-                              step="any"
-                              defaultValue={props.data.price}
-                              placeholder="Product price"
-                              ref={register({required: true})}/>
-            </Form.Group>
-            {errors.price && <p style={{color: "red"}}>Product price is required</p>}
+            {mappedFields}
             <Button className="my-3"
                     variant="secondary"
                     type="submit">{props.formType.toUpperCase()} PRODUCT</Button>
