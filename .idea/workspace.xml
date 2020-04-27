@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomInput/CustomInput.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomForm.js" afterDir="false" />
     </list>
@@ -58,7 +59,7 @@
       <workItem from="1587635874063" duration="19723000" />
       <workItem from="1587712351541" duration="19718000" />
       <workItem from="1587913675794" duration="15247000" />
-      <workItem from="1587975779640" duration="4274000" />
+      <workItem from="1587975779640" duration="6828000" />
     </task>
     <task id="LOCAL-00001" summary="Changed file structure, added react-router dependency to avoid IDE errors.">
       <created>1587478319156</created>
@@ -123,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587932047202</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Made form input fields dynamic, by mapping formFields array, to make my code even leaner.">
+      <created>1587981328269</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1587981328269</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,7 +146,8 @@
     <MESSAGE value="Added CustomForm component to get my code leaner by re-using it." />
     <MESSAGE value="Added basic validation in CustomForm component with the help of react-hook-form" />
     <MESSAGE value="Changed file structure." />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed file structure." />
+    <MESSAGE value="Made form input fields dynamic, by mapping formFields array, to make my code even leaner." />
+    <option name="LAST_COMMIT_MESSAGE" value="Made form input fields dynamic, by mapping formFields array, to make my code even leaner." />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="178" key="#Notifications" timestamp="1587723946802">
@@ -149,17 +158,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587916347144" />
-    <state x="498" y="56" key="CommitChangelistDialog2" timestamp="1587932045816">
+    <state x="263" y="20" key="CommitChangelistDialog2" timestamp="1587981326674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="498" y="56" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587932045816" />
+    <state x="263" y="20" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587981326674" />
     <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1587915702048">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587915702048" />
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587932055653">
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587981339656">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587932055653" />
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587981339656" />
   </component>
 </project>

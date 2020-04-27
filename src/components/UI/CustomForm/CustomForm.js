@@ -2,8 +2,10 @@ import React from 'react';
 import {Form, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
+import CustomInput from "./CustomInput/CustomInput";
 
 const CustomForm = (props) => {
+    console.log(props);
     const {register, handleSubmit, errors} = useForm();
     let formFields = [
         {key: "name", label: "Name", type: "text"},
@@ -16,18 +18,16 @@ const CustomForm = (props) => {
 
     let mappedFields = formFields.map((field) => {
         return (
-            <Form.Group key={field.key}>
-                <Form.Label>{field.label}</Form.Label>
-                <Form.Control
-                              onChange={props.inputHandler}
-                              name={field.key}
-                              type={field.type}
-                              step={field.step}
-                              defaultValue={props.data[field.key]}
-                              placeholder={"Product " + field.key}
-                              ref={register({required: true})}/>
-                {errors[field.key] && <p style={{color: "red"}}>Product {field.key} is required</p>}
-            </Form.Group>
+            <CustomInput
+                key={field.key}
+                name={field.key}
+                type={field.type}
+                label={field.label}
+                step={field.step}
+                errors={errors}
+                register={register}
+                data={props.data}
+            />
         )
     });
 
