@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="Added inputHandler to CustomInput component">
+    <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +59,7 @@
       <workItem from="1587913675794" duration="15247000" />
       <workItem from="1587975779640" duration="9633000" />
       <workItem from="1588362846376" duration="172000" />
-      <workItem from="1590145493590" duration="1588000" />
+      <workItem from="1590145493590" duration="2761000" />
     </task>
     <task id="LOCAL-00001" summary="Changed file structure, added react-router dependency to avoid IDE errors.">
       <created>1587478319156</created>
@@ -145,7 +145,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587984640512</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added inputHandler to CustomInput component (Re-Push).">
+      <created>1590147214341</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590147214341</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +170,8 @@
     <MESSAGE value="Made form input fields dynamic, by mapping formFields array, to make my code even leaner." />
     <MESSAGE value="Added CustomInput component, to get my code easier to read" />
     <MESSAGE value="Added inputHandler to CustomInput component" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added inputHandler to CustomInput component" />
+    <MESSAGE value="Added inputHandler to CustomInput component (Re-Push)." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added inputHandler to CustomInput component (Re-Push)." />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="178" key="#Notifications" timestamp="1587723946802">
@@ -174,17 +182,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587916347144" />
-    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2" timestamp="1590147081109">
+    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2" timestamp="1590147212709">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590147081109" />
+    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590147212709" />
     <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1588363015308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588363015308" />
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587984120489">
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1590147231072">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587984120489" />
+    <state x="208" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590147231072" />
   </component>
 </project>
