@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="">
+    <list default="true" id="1a995eab-b47e-4d4d-9c11-440038dfebdc" name="Default Changelist" comment="Added inputHandler to CustomInput component">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomInput/CustomInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UI/CustomForm/CustomInput/CustomInput.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../burger-builder-app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -59,7 +57,9 @@
       <workItem from="1587635874063" duration="19723000" />
       <workItem from="1587712351541" duration="19718000" />
       <workItem from="1587913675794" duration="15247000" />
-      <workItem from="1587975779640" duration="7623000" />
+      <workItem from="1587975779640" duration="9633000" />
+      <workItem from="1588362846376" duration="172000" />
+      <workItem from="1590145493590" duration="1588000" />
     </task>
     <task id="LOCAL-00001" summary="Changed file structure, added react-router dependency to avoid IDE errors.">
       <created>1587478319156</created>
@@ -138,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587984108834</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added inputHandler to CustomInput component">
+      <created>1587984640512</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1587984640512</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +162,8 @@
     <MESSAGE value="Changed file structure." />
     <MESSAGE value="Made form input fields dynamic, by mapping formFields array, to make my code even leaner." />
     <MESSAGE value="Added CustomInput component, to get my code easier to read" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added CustomInput component, to get my code easier to read" />
+    <MESSAGE value="Added inputHandler to CustomInput component" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added inputHandler to CustomInput component" />
   </component>
   <component name="WindowStateProjectService">
     <state x="174" y="178" key="#Notifications" timestamp="1587723946802">
@@ -166,14 +174,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="388" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587916347144" />
-    <state x="538" y="32" key="CommitChangelistDialog2" timestamp="1587984107798">
+    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2" timestamp="1590147081109">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="538" y="32" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587984107798" />
-    <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1587915702048">
+    <state x="538" y="32" width="960" height="812" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1590147081109" />
+    <state x="291" y="278" key="FileChooserDialogImpl" timestamp="1588363015308">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587915702048" />
+    <state x="291" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588363015308" />
     <state x="208" y="248" key="Vcs.Push.Dialog.v2" timestamp="1587984120489">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
